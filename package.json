@@ -4,7 +4,8 @@
   "description": "AC Paint Center - informational/product showcase website",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
-    "build": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify"
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify",
+    "vercel-build": "chmod +x node_modules/.bin/* && npm run build"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.13",
