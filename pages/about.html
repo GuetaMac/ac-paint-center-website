@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | AC Paint Center</title>
+    <link
+      rel="icon"
+      href="../assets/images/logo/ac-logo.jpg"
+      type="image/jpeg"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- About page: paint-chip inspired accents (scoped to this page) --- */
+      :root {
+        --chip-terracotta: #c1502e;
+        --chip-mustard: #d9a441;
+        --chip-sage: #6b8f71;
+        --chip-navy: #2f4157;
+        --chip-cream: #f6efe4;
+      }
+
+      .about-hero {
+        background: linear-gradient(180deg, var(--chip-cream) 0%, #ffffff 100%);
+      }
+
+      /* Fan of paint chips — signature element, echoes physical paint swatches */
+      .swatch-fan {
+        position: relative;
+        height: 260px;
+      }
+      .swatch-fan .chip {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 90px;
+        height: 220px;
+        border-radius: 8px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        transform-origin: bottom center;
+        transition: transform 0.35s ease;
+      }
+      .swatch-fan:hover .chip {
+        transform: translateX(-50%) rotate(var(--rot)) translateY(-10px) !important;
+      }
+      .chip1 {
+        background: var(--chip-terracotta);
+        transform: translateX(-50%) rotate(-24deg);
+        --rot: -30deg;
+        z-index: 1;
+      }
+      .chip2 {
+        background: var(--chip-mustard);
+        transform: translateX(-50%) rotate(-8deg);
+        --rot: -12deg;
+        z-index: 2;
+      }
+      .chip3 {
+        background: var(--chip-sage);
+        transform: translateX(-50%) rotate(8deg);
+        --rot: 12deg;
+        z-index: 3;
+      }
+      .chip4 {
+        background: var(--chip-navy);
+        transform: translateX(-50%) rotate(24deg);
+        --rot: 30deg;
+        z-index: 4;
+      }
+
+      /* Thin swatch-strip divider used twice on the page */
+      .swatch-strip {
+        display: flex;
+        height: 10px;
+      }
+      .swatch-strip span {
+        flex: 1;
+      }
+
+      .fact-card {
+        border-left: 4px solid var(--chip-terracotta);
+      }
+
+      .offer-card {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        border-top: 4px solid var(--card-accent, var(--chip-terracotta));
+      }
+      .offer-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .icon-badge {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .swatch-fan .chip,
+        .offer-card {
+          transition: none !important;
+        }
+      }
+
+      /* ===== Mobile responsive tweaks (scoped to this page) ===== */
+      @media (max-width: 767px) {
+        .swatch-fan {
+          height: 170px;
+          margin-top: 0.5rem;
+        }
+        .swatch-fan .chip {
+          width: 62px;
+          height: 145px;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-body text-brand-black bg-white overflow-x-hidden">
+    <!-- navbar gets injected here by loadHeader() in main.js -->
+    <div id="site-header-mount"></div>
+
+    <div class="swatch-strip" aria-hidden="true">
+      <span style="background: var(--chip-terracotta)"></span>
+      <span style="background: var(--chip-mustard)"></span>
+      <span style="background: var(--chip-sage)"></span>
+      <span style="background: var(--chip-navy)"></span>
+    </div>
+
+    <!-- Hero -->
+    <section class="about-hero py-14 sm:py-20">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 sm:gap-12 items-center"
+      >
+        <div class="text-center md:text-left">
+          <p
+            class="text-xs font-display font-semibold tracking-widest uppercase text-brand-red mb-3"
+          >
+            About AC Paint Center
+          </p>
+          <h1
+            class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight mb-5"
+          >
+            Color and craftsmanship, right here in Alaminos.
+          </h1>
+          <p class="text-gray-600 leading-relaxed text-base sm:text-lg">
+            AC Paint Center is a paint supplies store and painting contracting
+            business along Maharlika Highway in Brgy. Alaminos, Laguna — right
+            in front of Puregold Alaminos. Led by JR Cascabel, we give
+            homeowners, businesses, and fellow contractors a reliable place to
+            buy quality paint, and a team they can trust to get the job done
+            right.
+          </p>
+        </div>
+        <div class="swatch-fan" aria-hidden="true">
+          <div class="chip chip1"></div>
+          <div class="chip chip2"></div>
+          <div class="chip chip3"></div>
+          <div class="chip chip4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story + fact card -->
+    <section
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid md:grid-cols-3 gap-8 sm:gap-10"
+    >
+      <div class="md:col-span-2">
+        <h2 class="font-display font-bold text-2xl mb-4">Our Story</h2>
+        <p class="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
+          We may still be a young business, but we bring focus and honesty to
+          every project — whether it's a can of paint sold over the counter or a
+          full residential or commercial painting job. From our physical store
+          to the sites we paint, our aim is the same: solid workmanship, fair
+          prices, and service our customers can count on.
+        </p>
+        <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+          Every job, big or small, gets the same attention to detail — because
+          in this business, the finish is what people remember.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-6 fact-card">
+        <h3
+          class="font-display font-semibold text-sm uppercase tracking-wide text-gray-500 mb-4"
+        >
+          At a Glance
+        </h3>
+        <ul class="space-y-4 text-sm">
+          <li>
+            <p class="font-display font-bold text-lg">Alaminos, Laguna</p>
+            <p class="text-gray-500">Maharlika Highway, in front of Puregold</p>
+          </li>
+          <li>
+            <p class="font-display font-bold text-lg">Store + Contracting</p>
+            <p class="text-gray-500">
+              Retail supplies and painting services under one roof
+            </p>
+          </li>
+          <li>
+            <p class="font-display font-bold text-lg">
+              Residential &amp; Commercial
+            </p>
+            <p class="text-gray-500">
+              Homes, businesses, and everything between
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-12 sm:py-16" style="background: var(--chip-cream)">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-6 sm:gap-10"
+      >
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm">
+          <div
+            class="icon-badge mb-4"
+            style="background: var(--chip-terracotta)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <h2 class="font-display font-bold text-xl mb-3">Our Mission</h2>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+            To provide the Alaminos community and surrounding areas with
+            accessible, quality paint products and dependable painting services
+            — backed by honest advice and workmanship that lasts.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm">
+          <div class="icon-badge mb-4" style="background: var(--chip-navy)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </div>
+          <h2 class="font-display font-bold text-xl mb-3">Our Vision</h2>
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+            To grow into the go-to name for paint and contracting services in
+            Laguna, known equally for our retail store and for the quality of
+            our residential and commercial projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <h2 class="section-title text-center mb-10">What We Offer</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div
+          class="offer-card p-6 bg-white rounded-lg border border-gray-100"
+          style="--card-accent: var(--chip-terracotta)"
+        >
+          <div
+            class="icon-badge mb-4"
+            style="
+              background: color-mix(in srgb, var(--chip-terracotta) 15%, white);
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              style="color: var(--chip-terracotta)"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h18v6H3V3zm0 12h18v6H3v-6zm2-6h2v6H5V9z"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2">Retail Store</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Visit our store along Maharlika Highway, Brgy. Alaminos for paint,
+            supplies, and materials for your next project — big or small.
+          </p>
+        </div>
+        <div
+          class="offer-card p-6 bg-white rounded-lg border border-gray-100"
+          style="--card-accent: var(--chip-sage)"
+        >
+          <div
+            class="icon-badge mb-4"
+            style="background: color-mix(in srgb, var(--chip-sage) 15%, white)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              style="color: var(--chip-sage)"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2">
+            Residential Painting
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            From single rooms to full-house repaints, we handle homes with care
+            and attention to detail from start to finish.
+          </p>
+        </div>
+        <div
+          class="offer-card p-6 bg-white rounded-lg border border-gray-100 sm:col-span-2 md:col-span-1"
+          style="--card-accent: var(--chip-navy)"
+        >
+          <div
+            class="icon-badge mb-4"
+            style="background: color-mix(in srgb, var(--chip-navy) 15%, white)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              style="color: var(--chip-navy)"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7M9 9v.01M9 12v.01M9 15v.01"
+              />
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2">
+            Commercial Projects
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We work with businesses and establishments on painting projects of
+            all sizes, with timelines and budgets in mind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="swatch-strip" aria-hidden="true">
+      <span style="background: var(--chip-terracotta)"></span>
+      <span style="background: var(--chip-mustard)"></span>
+      <span style="background: var(--chip-sage)"></span>
+      <span style="background: var(--chip-navy)"></span>
+    </div>
+
+    <footer class="bg-brand-black text-gray-300 py-10 sm:py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10"
+      >
+        <div>
+          <img
+            src="../assets/images/logo/ac-logo.jpg"
+            alt="AC Paint Center"
+            class="h-10 mb-3"
+          />
+          <p class="text-sm text-gray-400">
+            Contractor: <span class="text-white font-medium">JR Cascabel</span>
+          </p>
+          <p class="text-sm mt-4">
+            &copy; <span id="year"></span> AC Paint Center. All rights reserved.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="font-display font-semibold text-white text-sm uppercase tracking-wide mb-3"
+          >
+            Contact Us
+          </h3>
+          <ul class="text-sm space-y-2 text-gray-400">
+            <li class="flex items-start gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 mt-0.5 flex-shrink-0 text-brand-red"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span>
+                Maharlika Highway, Brgy. Alaminos, Laguna
+                <br />(in front of Puregold Alaminos)
+              </span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 flex-shrink-0 text-brand-red"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+              <a href="tel:09383227858" class="hover:text-white"
+                >0938 322 7858</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm:col-span-2 md:col-span-1">
+          <h3
+            class="font-display font-semibold text-white text-sm uppercase tracking-wide mb-3"
+          >
+            Quick Links
+          </h3>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="./about.html" class="hover:text-white">About</a>
+            <a href="./products.html" class="hover:text-white">Products</a>
+            <a href="./services.html" class="hover:text-white">Services</a>
+            <a href="./contact.html" class="hover:text-white">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+  </body>
+</html>

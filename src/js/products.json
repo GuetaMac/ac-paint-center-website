@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Sample Interior Paint",
+    "category": "interior",
+    "price": null,
+    "description": "Short description of the product goes here.",
+    "image": "../assets/images/products/placeholder.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sample Exterior Paint",
+    "category": "exterior",
+    "price": null,
+    "description": "Weatherproof finish for outdoor surfaces.",
+    "image": "../assets/images/products/placeholder.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Sample Primer",
+    "category": "primer",
+    "price": null,
+    "description": "Prep coat for a smoother, longer-lasting finish.",
+    "image": "../assets/images/products/placeholder.jpg"
+  }
+]
