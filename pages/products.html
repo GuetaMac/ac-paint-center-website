@@ -20,9 +20,11 @@
     <!-- navbar gets injected here by loadHeader() in main.js -->
     <div id="site-header-mount"></div>
 
-    <section class="max-w-7xl mx-auto px-6 py-16">
-      <h1 class="section-title">Our Products</h1>
-      <p class="text-gray-600 max-w-2xl mb-8">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <h1 class="section-title text-2xl sm:text-3xl md:text-4xl">
+        Our Products
+      </h1>
+      <p class="text-gray-600 max-w-2xl mb-6 sm:mb-8 text-sm sm:text-base">
         Browse paint, coatings, and painting supplies from the brands we carry.
         For pricing and availability, please visit the store or contact us
         directly.
@@ -34,7 +36,7 @@
           id="product-search"
           type="text"
           placeholder="Search by product, brand, or category..."
-          class="w-full md:w-1/2 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-red"
+          class="w-full md:w-1/2 border border-gray-300 rounded-md px-4 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-brand-red"
         />
       </div>
 
@@ -45,58 +47,61 @@
         >
           Brand
         </p>
-        <div id="brand-filters" class="flex flex-wrap gap-2">
+        <div
+          id="brand-filters"
+          class="flex flex-nowrap sm:flex-wrap gap-2 overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 scrollbar-hide"
+        >
           <button
             data-brand="all"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black bg-brand-black text-white text-sm"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black bg-brand-black text-white text-xs sm:text-sm whitespace-nowrap"
           >
             All Brands
           </button>
           <button
             data-brand="davies"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Davies
           </button>
           <button
             data-brand="boysen"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Boysen
           </button>
           <button
             data-brand="primero"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Primero
           </button>
           <button
             data-brand="mayon"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Mayon
           </button>
           <button
             data-brand="guilder"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Guilder
           </button>
           <button
             data-brand="seku"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Seku
           </button>
           <button
             data-brand="anzahl"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Anzahl
           </button>
           <button
             data-brand="champ"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Champ
           </button>
@@ -110,64 +115,67 @@
         >
           Category
         </p>
-        <div id="category-filters" class="flex flex-wrap gap-2">
+        <div
+          id="category-filters"
+          class="flex flex-nowrap sm:flex-wrap gap-2 overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 scrollbar-hide"
+        >
           <button
             data-filter="all"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black bg-brand-black text-white text-sm"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black bg-brand-black text-white text-xs sm:text-sm whitespace-nowrap"
           >
             All Categories
           </button>
           <button
             data-filter="interior"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Interior
           </button>
           <button
             data-filter="exterior"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Exterior
           </button>
           <button
             data-filter="primer"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Primer
           </button>
           <button
             data-filter="waterproofing"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Waterproofing
           </button>
           <button
             data-filter="enamel"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Enamel
           </button>
           <button
             data-filter="automotive"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Automotive
           </button>
           <button
             data-filter="thinner"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Thinner
           </button>
           <button
             data-filter="tools"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Tools
           </button>
           <button
             data-filter="multi-surface"
-            class="filter-btn px-4 py-2 rounded-md border border-brand-black text-brand-black text-sm hover:bg-brand-black hover:text-white transition-colors"
+            class="filter-btn shrink-0 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border border-brand-black text-brand-black text-xs sm:text-sm whitespace-nowrap hover:bg-brand-black hover:text-white transition-colors"
           >
             Multi-Surface
           </button>
@@ -182,7 +190,7 @@
       <!-- Product grid: populated by src/js/products.js -->
       <div
         id="product-grid"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
       ></div>
 
       <div id="no-results" class="hidden text-center text-gray-500 mt-16">
@@ -197,13 +205,13 @@
       class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4"
     >
       <div
-        class="bg-white rounded-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto"
+        class="bg-white rounded-lg max-w-lg w-full p-4 sm:p-6 relative max-h-[90vh] overflow-y-auto"
       >
         <button
           id="modal-close"
           type="button"
           aria-label="Close"
-          class="absolute top-4 right-4 text-gray-400 hover:text-brand-black text-2xl leading-none"
+          class="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-400 hover:text-brand-black text-2xl leading-none"
         >
           &times;
         </button>
@@ -211,8 +219,10 @@
       </div>
     </div>
 
-    <footer class="bg-brand-black text-gray-300 py-12">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <footer class="bg-brand-black text-gray-300 py-10 sm:py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10"
+      >
         <div>
           <img
             src="../assets/images/logo/ac-logo.jpg"
@@ -296,6 +306,17 @@
         </div>
       </div>
     </footer>
+
+    <style>
+      /* Hide scrollbar for the horizontally-scrolling filter rows on mobile */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
 
     <script src="../src/js/main.js"></script>
     <script src="../src/js/products.js"></script>
