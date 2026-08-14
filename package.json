@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "AC Paint Center - informational/product showcase website",
   "scripts": {
-    "dev": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
-    "build": "tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify"
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.13",
